@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latihan1/register_page.dart';
+import 'package:latihan1/widget/widget_button.dart';
+import 'package:latihan1/widget/widget_controller.dart';
 import 'caculator.dart';
 
 class LoginPage extends StatefulWidget {
@@ -44,30 +46,18 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20),
-              child: TextField(
-                controller: _usernameController,
-                decoration: InputDecoration(
-                  labelText: "Username",
-                  border: OutlineInputBorder()
-                ),
-              ),
+             margin: EdgeInsets.only(top: 20, bottom: 20),
+             child: MyTextField(textEditingController: _usernameController, labelText: "Input Username", IsPassword: false,),
             ),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Password",
-                border: OutlineInputBorder()
-              ),
+            Container(
+             margin: EdgeInsets.only(top: 20, bottom: 20),
+             child: MyTextField(textEditingController: _passwordController, labelText: "Input Password", IsPassword: true),
             ),
             Container(
               margin: EdgeInsets.only(top: 20, bottom: 20),
               child: Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // jika username dan password adlah admin maka muncul snackbar sukses login
-                    final String username = _usernameController.text;
+                child: CustomButton(text: "Login", textColor: Colors.blue, onPressed: (){
+                   final String username = _usernameController.text;
                     final String password = _passwordController.text;
 
                     if (username == 'ghasia' && password == 'admin123') {
@@ -77,24 +67,20 @@ class _LoginPageState extends State<LoginPage> {
                     } else {
                       _showSnackBar('Invalid username or password.', Colors.red);
                     }
-                  },
-                  child: Text("Login")
-                ),
+                }),
               )
             ),
             Center(
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
+              child: CustomButton(text: "Register", textColor: Colors.red, onPressed: (){
+                 Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const RegisterPage(),
                     ),
                   );
                 },
-                child: const Text("Belum punya akun? Daftar di sini"),
               ),
-            )
+            ),
           ],
         ),
       ),
