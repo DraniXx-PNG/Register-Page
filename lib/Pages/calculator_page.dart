@@ -14,6 +14,11 @@ final CalculatorController calculatorController = Get.put(CalculatorController()
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    appBar: AppBar(
+        title: Text("Calculator"),
+        backgroundColor: Colors.blue,
+        automaticallyImplyLeading: false, 
+      ),
     body: Container(
     child: Column(
     children: [
@@ -48,10 +53,10 @@ final CalculatorController calculatorController = Get.put(CalculatorController()
       ),
       Obx(() => Text("Hasil "+calculatorController.hasil.value)),
       CustomButton(
-            text: "Move to footballplayer",
+            text: "Reset",
             textColor: Colors.green,
             onPressed: () {
-               Get.toNamed(AppRoutes.footballplayer);
+              calculatorController.clear();
             },
           ),       
         ],

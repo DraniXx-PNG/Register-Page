@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihan1/Pages/home_page.dart';
 import 'package:latihan1/register_page.dart';
 import 'package:latihan1/widget/widget_button.dart';
 import 'package:latihan1/widget/widget_controller.dart';
@@ -62,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
 
                     if (username == 'ghasia' && password == 'admin123') {
                       _showSnackBar('Login successful!', Colors.green);
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MyCalcu()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
                     } else {
                       _showSnackBar('Invalid username or password.', Colors.red);
