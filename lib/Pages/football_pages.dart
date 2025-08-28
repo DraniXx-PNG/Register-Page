@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan1/Contoller/Football_Controller.dart';
-import 'package:latihan1/Contoller/Football_Edit_Controller.dart';
-import 'package:latihan1/Models/player.dart';
 import 'package:latihan1/routes/routes.dart';
 
 class FootballPage extends StatelessWidget {
@@ -28,10 +26,10 @@ class FootballPage extends StatelessWidget {
                     backgroundImage: NetworkImage(player.profileImage),
                   ),
                   onTap: () {
-                    final editController = Get.put(FootballEditController());
-                    editController.loadPlayerData(player, index);
-                    Get.toNamed(AppRoutes.footballedit);
-                  },
+                Get.toNamed(AppRoutes.footballedit,
+                  arguments: index ,
+                   );
+                 },
                   title: Text(player.nama),
                   subtitle:
                       Text("${player.position} • #${player.nomorPunggung}"),

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'package:latihan1/Pages/calculator_page.dart';
 import 'package:latihan1/Pages/football_edit_pages.dart';
 import 'package:latihan1/Pages/football_pages.dart';

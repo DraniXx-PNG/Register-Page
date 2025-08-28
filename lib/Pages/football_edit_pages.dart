@@ -5,7 +5,7 @@ import 'package:latihan1/Contoller/Football_Edit_Controller.dart';
 
 class FootballEditPage extends StatelessWidget {
   FootballEditPage({super.key});
-  final FootballEditController editController = Get.find<FootballEditController>();
+  final FootballEditController editController = Get.put(FootballEditController());
 
   @override
   Widget build(BuildContext context) {
