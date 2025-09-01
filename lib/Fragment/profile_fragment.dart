@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class ProfileFragment extends StatelessWidget {
+  const ProfileFragment({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("My Profile"),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

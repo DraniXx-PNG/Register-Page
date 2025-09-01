@@ -4,14 +4,19 @@ import 'package:latihan1/Contoller/Calculator_Controller.dart';
 import 'package:latihan1/widget/widget_button.dart';
 import 'package:latihan1/widget/widget_controller.dart';
 
-class CalculatorPage extends StatelessWidget {
-CalculatorPage({super.key});
+class CalculatorFragment extends StatelessWidget {
+CalculatorFragment({super.key});
 
 final CalculatorController calculatorController = Get.put(CalculatorController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    appBar: AppBar(
+        title: Text("Calculator"),
+        backgroundColor: Colors.blue,
+        automaticallyImplyLeading: false, 
+      ),
     body: Container(
     child: Column(
     children: [

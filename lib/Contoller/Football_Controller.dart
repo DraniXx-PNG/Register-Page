@@ -60,5 +60,4 @@ nomorPunggung: 9),
 
   ].obs;
 
-
 }

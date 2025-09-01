@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:latihan1/Components/input_field.dart';
 import 'package:latihan1/Contoller/Football_Edit_Controller.dart';
 
-class FootballEditPage extends StatelessWidget {
-  FootballEditPage({super.key});
+class FootballEditFragment extends StatelessWidget {
+  FootballEditFragment({super.key});
   final FootballEditController editController = Get.put(FootballEditController());
 
   @override

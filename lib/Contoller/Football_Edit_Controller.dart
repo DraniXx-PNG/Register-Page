@@ -17,14 +17,17 @@ class FootballEditController extends GetxController {
   void onInit() {
     super.onInit();
 
-    playerIndex = Get.arguments as int;
+    
+    playerIndex = (Get.arguments ?? 0) as int;
 
+   
     final Player player = footballController.players[playerIndex];
 
+  
     namaController = TextEditingController(text: player.nama);
     positionController = TextEditingController(text: player.position);
     nomorController =
-    TextEditingController(text: player.nomorPunggung.toString());
+        TextEditingController(text: player.nomorPunggung.toString());
     imageController = TextEditingController(text: player.profileImage);
   }
 
@@ -36,8 +39,20 @@ class FootballEditController extends GetxController {
       nomorPunggung: int.tryParse(nomorController.text) ?? 0,
     );
 
+    // update data player di controller utama
     footballController.players[playerIndex] = updatedPlayer;
     footballController.players.refresh();
+
+    // kembali ke halaman sebelumnya
     Get.back();
+  }
+
+  @override
+  void onClose() {
+    namaController.dispose();
+    positionController.dispose();
+    nomorController.dispose();
+    imageController.dispose();
+    super.onClose();
   }
 }
